@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "routes": [
+    { "src": "/api/mls", "dest": "/api/mls.js" },
+    { "src": "/(.*)", "dest": "/index.html" }
+  ]
+}

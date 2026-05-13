@@ -1468,7 +1468,7 @@ footer {
           <div class="form-title">Écrivez-nous</div>
           <div class="form-subtitle">Nous vous répondrons dans les 24 heures. Service en français et en anglais.</div>
 
-          <form onsubmit="handleForm(event)">
+          <form action="https://formspree.io/f/mkoyepow" method="POST">
             <div class="form-row">
               <div class="form-group">
                 <label class="form-label" for="nom">Nom</label>
@@ -1499,6 +1499,10 @@ footer {
               <label class="form-label" for="message">Comment pouvons-nous vous aider ?</label>
               <textarea class="form-textarea" id="message" placeholder="Décrivez votre projet immobilier..."></textarea>
             </div>
+            <!-- Hidden fields for Formspree -->
+            <input type="hidden" name="_subject" value="Nouvelle demande — Boston Immobilier">
+            <input type="hidden" name="_next" value="https://www.bostonimmobilier.com?merci=1">
+            <input type="hidden" name="_language" value="fr">
             <button type="submit" class="btn btn-red" style="width:100%; justify-content:center;">
               Envoyer ma demande →
             </button>
@@ -1797,20 +1801,7 @@ mobileMenu.querySelectorAll('a').forEach(a => {
 })();
 
 
-// Form
-function handleForm(e) {
-  e.preventDefault();
-  const btn = e.target.querySelector('button[type="submit"]');
-  btn.textContent = 'Message envoyé ✓';
-  btn.style.background = 'var(--ciel)';
-  btn.disabled = true;
-  setTimeout(() => {
-    btn.textContent = 'Envoyer ma demande →';
-    btn.style.background = '';
-    btn.disabled = false;
-    e.target.reset();
-  }, 4000);
-}
+// Form handled by Formspree
 </script>
 </body>
 </html>

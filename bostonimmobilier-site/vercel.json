@@ -1,7 +1,11 @@
 {
   "version": 2,
+  "builds": [
+    { "src": "api/mls.js", "use": "@vercel/node" },
+    { "src": "index.html", "use": "@vercel/static" }
+  ],
   "routes": [
-    { "src": "/api/mls", "dest": "/bostonimmobilier-site/api/mls.js" },
-    { "src": "/(.*)", "dest": "/bostonimmobilier-site/index.html" }
+    { "src": "/api/mls", "dest": "/api/mls.js" },
+    { "src": "/(.*)", "dest": "/index.html" }
   ]
 }
